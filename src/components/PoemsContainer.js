@@ -1,13 +1,12 @@
 // PoemsContainer.js
-import React from "react";
-import Poem from "./Poem";
+import React from 'react';
+import Poem from './Poem';
 
-function PoemsContainer({ poems }) {
-	console.log("PoemsContainer received poems:", poems); // Log received poems for debugging
+function PoemsContainer({ poems, onReadClick }) {
 	return (
 		<div className="poems-container">
-			{poems.map((poem, index) => (
-				<Poem key={index} poem={poem} />
+			{poems.map(poem => (
+				<Poem key={poem.id} poem={poem} onReadClick={onReadClick} />
 			))}
 		</div>
 	);
